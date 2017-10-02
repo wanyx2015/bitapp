@@ -4,16 +4,16 @@ const async = require('async');
 
 var coin = '';
 
-module.exports.getPrice = (c) => {
-    this.coin = c;
+module.exports.getPrice = (inputCoin) => {
+    this.coin = inputCoin;
     async.parallel({
 
-        sc: (callback) => {
+        coin: (callback) => {
             var url = `https://bittrex.com/api/v1.1/public/getticker?market=${this.coin}`;
             ax.get(url)
                 .then((response) => {
                     if (response.data.success) {
-                        console.log(coin);
+                        console.log(this.coin);
                         console.log('===')
                         console.log(response.data.result.Last);
                         console.log();
@@ -64,7 +64,7 @@ module.exports.getPrice = (c) => {
     }, (error, result) => {
         console.log('cny price');
         console.log('===');
-        console.log(result.btc * result.sc * result.usd)
+        console.log(result.btc * result.coin * result.usd)
     });
 
 }
