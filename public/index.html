@@ -1,0 +1,325 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>Test Page</title>
+
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 1rem
+        }
+        
+        .simple {
+            width: 300px;
+            margin: 20px auto;
+            border-style: dashed;
+            border-color: aqua;
+            box-sizing: border-box;
+        }
+        
+        .fancy {
+            width: 300px;
+            margin: 20px auto;
+            padding: 50px;
+            border-style: solid;
+            border-width: 1px;
+            border-color: bisque;
+            /*box-sizing 让width就包含了padding大小*/
+            box-sizing: border-box;
+        }
+        
+        .fixed {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 200px;
+            background-color: white;
+            border-style: solid;
+            border-width: medium;
+        }
+        
+        .box {
+            width: 200px;
+            height: 100px;
+            margin: 1em;
+            border-style: solid;
+            border-left-style: none;
+            border-width: 1px;
+            border-right-width: thick;
+        }
+        
+        .box-float {
+            float: left;
+            border-color: blue;
+        }
+        
+        .box-inline-block {
+            display: inline-block;
+            border-color: darkcyan;
+        }
+        
+        .after-box-float {
+            clear: left;
+            border-color: firebrick;
+            width: 250px;
+        }
+        
+        .after-box-inline {
+            border-color: darkmagenta;
+            width: 250px;
+        }
+        /*        below is for float item example*/
+        
+        code {
+            background: #2db34a;
+            border-radius: 6px;
+            color: #fff;
+            display: block;
+            font: 14px/24px "Source Code Pro", Inconsolata, "Lucida Console", Terminal, "Courier New", Courier;
+            padding: 24px 15px;
+            text-align: center;
+        }
+        
+        .default {
+            background: none;
+            color: #666;
+        }
+        
+        .group,
+        .row,
+        header,
+        section,
+        aside,
+        footer {
+            /*            margin: 0 1.5% 24px 1.5%;*/
+            margin: 0 1% 24px 1%;
+        }
+        
+        footer {
+            margin-bottom: 0;
+        }
+        /*LET US ADD SOME FLOAT        */
+        
+        section {
+            float: left;
+        }
+        
+        aside {
+            float: right;
+        }
+        /*LET US ADD THE WIDTH AND MARGIN*/
+        
+        section {
+            float: left;
+            /*            margin: 0 1.5%;*/
+            width: 48%;
+        }
+        
+        aside {
+            float: right;
+            /*            margin: 0 1.5%;*/
+            width: 48%;
+            background-color: bisque;
+        }
+        
+        footer {
+            /*            clear: both;*/
+            margin-bottom: 0px;
+            /*            margin-top: 10px;*/
+        }
+        /*ADD CONTAINER TO GROUP THE FLOAT        */
+        
+        .group {
+            background: #eaeaed;
+            border-radius: 6px;
+            clear: both;
+            *zoom: 1;
+        }
+        
+        .group:before,
+        .group:after {
+            content: "";
+            display: table;
+        }
+        
+        .group:after {
+            clear: both;
+            /*            margin-bottom: 10px;*/
+        }
+        
+        .group {
+            clear: both;
+            *zoom: 1;
+        }
+        
+        button {
+            display: block;
+        }
+        /*BELOW IS FOR KANGHUA TEST        */
+        
+        .row {
+            background: #eaeaed;
+            border-radius: 6px;
+            clear: both;
+            *zoom: 1;
+        }
+        
+        .row:before,
+        .row:after {
+            content: "";
+            display: table;
+        }
+        
+        .row:after {
+            clear: both;
+            /*            margin-bottom: 10px;*/
+        }
+        
+        .row {
+            clear: both;
+            *zoom: 1;
+        }
+        /*KANGHUA ITEM        */
+        
+        .left,
+        .right {
+            margin: 0 1% 0 1%;
+        }
+        
+        .right {
+            float: right;
+            /*            display: table;*/
+            text-align: center;
+            /*            padding: 1em 1em;*/
+            /*            height: inherit;*/
+            width: 10%;
+            /*            margin: 0 0*/
+            background-color: brown;
+        }
+        
+        .left {
+            float: left;
+            text-align: center;
+            width: 10%;
+            background-color: brown;
+        }
+
+    </style>
+
+
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        $(function() {
+            // Do stuff.
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <code>&#60;header&#62;</code>
+    </header>
+
+    <div class="group">
+
+        <code class="default">&#60;section="group"&#62;</code>
+
+        <section>
+            <code>&#60;section&#62;</code>
+        </section>
+
+        <aside>
+            <!--                <code>&#60;aside&#62;</code>-->
+            <!--                <code>&#60;aside&#62;</code>-->
+            <button>OK</button>
+            <button class="item-right">Cancel</button>
+        </aside>
+    </div>
+
+
+    <!--    KANGHUA WECHAT TEST-->
+    <!--    KANGHUA WECHAT TEST-->
+    <!--    KANGHUA WECHAT TEST-->
+    <!--    KANGHUA WECHAT TEST-->
+    <!--    KANGHUA WECHAT TEST-->
+    <!--    KANGHUA WECHAT TEST-->
+
+    <div class="row">
+
+        <div class="left">
+            <code>&#60;section&#62;</code>
+        </div>
+
+        <div class="left">
+            <code>&#60;section&#62;</code>
+        </div>
+
+        <div class="left">
+            <code>&#60;section&#62;</code>
+        </div>
+
+        <div class="right">
+            HELLO
+        </div>
+        <div class="right">
+            <code>&#60;section&#62;</code>
+        </div>
+
+    </div>
+
+
+    <footer>
+        <code>&#60;footer&#62;</code>
+    </footer>
+
+
+    <div class="simple">
+        我小一些...看就是就是垃圾就是。。。。开始的开始的立刻发酵饲料快递费就老是觉得。。。。开始都浪费粮食的
+    </div>
+
+    <div class="fancy">
+        我比它大！看就是就是垃圾就是。。。。开始的开始的立刻发酵饲料快递费就老是觉得。。。。开始都浪费粮食的
+    </div>
+
+
+    <div class="fixed">
+        Hello！暂时不要太关注我哦。
+    </div>
+
+
+    <div class="box box-float"> 我的浮动......float:left </div>
+    <div class="box box-float"> 我的浮动......float:left </div>
+    <div class="box box-float"> 我的浮动......float:left </div>
+    <div class="box box-float"> 我的浮动......float:left </div>
+    <div class="box box-float"> 我的浮动......float:left </div>
+    <div class="box box-float"> 我的浮动......float:left </div>
+    <div class="box after-box-float"> 我取消浮动...... clear:left</div>
+
+
+
+    <div class="box box-inline-block"> 我的浮动...... inline-block</div>
+    <div class="box box-inline-block"> 我的浮动...... inline-block</div>
+    <div class="box box-inline-block"> 我的浮动...... inline-block</div>
+    <div class="box box-inline-block"> 我的浮动...... inline-block</div>
+    <div class="box box-inline-block"> 我的浮动...... inline-block</div>
+    <div class="box box-inline-block"> 我的浮动...... inline-block</div>
+    <div class="box after-box-inline"> 我取消浮动 no clear...... </div>
+
+
+
+
+
+
+</body>
+
+</html>
