@@ -10,6 +10,11 @@ var app = express();
 // add partial support for hbs
 hbs.registerPartials(__dirname + '/views/partials');
 
+// add a hbs helper
+hbs.registerHelper('getCurrentDate', () => {
+    return new Date().toLocaleString();
+})
+
 // set server rendering engine to hbs
 app.set('view engine', 'hbs');
 
