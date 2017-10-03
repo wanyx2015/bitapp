@@ -21,7 +21,7 @@ function getWeather(callback) {
                 .then((res) => {
                     // console.log(res);
 
-                    ax.get(`https://api.darksky.net/forecast/896a0f9f0608b93708f4ef63ed9f7de6/${res.latitude},-${res.longitude}?lang=zh&unit=si`)
+                    ax.get(`https://api.darksky.net/forecast/896a0f9f0608b93708f4ef63ed9f7de6/${res.latitude},${res.longitude}?lang=zh&unit=si`)
                         .then((res) => {
                             // console.log(res.data.currently.summary);
                             // console.log(res.data.hourly.summary);
