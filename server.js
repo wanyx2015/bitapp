@@ -1,5 +1,7 @@
 const express = require('express');
 const hbs = require('hbs');
+var favicon = require('serve-favicon');
+var path = require('path');
 
 const weather = require('./weather/weather');
 const coin = require('./coin/coin');
@@ -9,6 +11,8 @@ const coin = require('./coin/coin');
 const port = process.env.PORT || 3000;
 
 var app = express();
+
+app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 // add partial support for hbs
 hbs.registerPartials(__dirname + '/views/partials');
@@ -27,6 +31,7 @@ app.set('view engine', 'hbs');
 
 // provide static html file access
 app.use(express.static(__dirname + './public'));
+
 
 app.use((req, res, next) => {
     var rightNow = new Date().toLocaleString();
