@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>SC Price</title>
-    </head>
-    <body>
 
-        {{> header}}
-        <h1>Coin price in BTC</h1>
-        <h3>{{coin}}</h3>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <h2>BTC price in USD</h2>
-        <h3>{{btc}}</h3>
+    <title>SC Price</title>
+</head>
 
-        <h2>USD/CNY echange rate</h2>
-        <h4>{{usd}}</h4>
+<body>
 
-        <h2>Coin price in CNY</h2>
-        <h3 style="color:red;">{{cny}}</h3>
+    {{> header}}
+    <h2>Coin price in BTC</h2>
+    <p>{{coin}}</p>
 
-        {{> footer}}
-    </body>
+    <h2>BTC price in USD</h2>
+    <p>{{btc}}</p>
+
+    <h2>USD/CNY echange rate</h2>
+    <h4>{{usd}}</h4>
+
+    <h2>Coin price in CNY</h2>
+    <p style="color:red;">{{cny}}</p>
+
+    {{> footer}}
+</body>
+
 </html>
