@@ -1,10 +1,22 @@
 const ax = require('axios');
 const async = require('async');
-
+// const _ = require('lodash');
 
 var coin = '';
 
-module.exports.getPrice = (inputCoin) => {
+var combineObj = function (a, b) {
+    var c = {};
+    for (var key in a) {
+        c[key] = a[key];
+    }
+    for (var key in b) {
+        c[key] = b[key];
+    }
+    return c;
+}
+
+
+module.exports.getPrice = (inputCoin, callback) => {
     this.coin = inputCoin;
     async.parallel({
 
@@ -65,6 +77,11 @@ module.exports.getPrice = (inputCoin) => {
         console.log('cny price');
         console.log('===');
         console.log(result.btc * result.coin * result.usd)
+
+        var result = combineObj(result, {
+            cny: result.btc * result.coin * result.usd
+        })
+        callback(result);
     });
 
 }
