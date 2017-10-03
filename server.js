@@ -15,6 +15,10 @@ hbs.registerHelper('getCurrentDate', () => {
     return new Date().toLocaleString();
 })
 
+hbs.registerHelper('screemIt', (text) => {
+    return text.toUpperCase();
+})
+
 // set server rendering engine to hbs
 app.set('view engine', 'hbs');
 
