@@ -3,13 +3,11 @@
 <h3><a href='/bit'> SC Price </a></h3>
 <h3><a href='/weather'> Weather </a></h3> --}}
 
-
+{{!-- 
 <ul>
     <li><a href="/">{{screemIt  'home'}}</a></li>
     <li><a href="/bit">SC Price</a></li>
     <li><a href="weather">Weather</a></li>
-    {{!--
-    <li><a href="about.asp">About</a></li> --}}
 </ul>
 
 <style>
@@ -17,5 +15,44 @@
         list-style-type: none;
         margin: 0;
         padding: 0;
+    }
+</style> --}}
+
+
+<div class="topnav" id="myTopnav">
+    <a href="/">Home</a>
+    <a href="/bit">SC Price</a>
+    <a href="/weather">Weather</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
+
+<style>
+    /* Add a black background color to the top navigation */
+
+    .topnav {
+        background-color: #555;
+        overflow: hidden;
+    }
+    /* Style the links inside the navigation bar */
+
+    .topnav a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+    /* Change the color of links on hover */
+
+    .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+    /* Hide the link that should open and close the topnav on small screens */
+
+    .topnav .icon {
+        display: none;
     }
 </style>
