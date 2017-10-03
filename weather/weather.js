@@ -30,10 +30,17 @@ function getWeather(callback) {
                             callback(res.data)
                             // return (res);
                         })
+                        .catch((error) => {
+                            console.log(error);
+                        });
                 })
+                .catch((error) => {
+                    console.log(error);
+                });
 
         })
-        .catch(function (error) {
+        .catch((error) => {
             console.log(error);
         });
+
 }
