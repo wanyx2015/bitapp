@@ -42,12 +42,10 @@ app.use((req, res, next) => {
 
 app.get('/', (req, res) => {
 
-    weather.getWeather((result) => {
-        res.render('weather', {
-            summary: result.currently.summary + '\n' + result.hourly.summary + '\n' + result.daily.summary
-        })
-
-    })
+    weather.getWeather((data) => {
+        // console.log(data);
+        res.render('weather.hbs', data);
+    });
 });
 
 
@@ -83,21 +81,22 @@ app.get('/bit', (req, res) => {
         res.render('bit.hbs', data)
     });
 
-    // res.send('coin price');
 })
 
 app.get('/weather', (req, res) => {
-    weather.getWeather((result) => {
-        console.log(result.currently.summary);
-        console.log(result.hourly.summary);
-        console.log(result.daily.summary);
+    weather.getWeather((data) => {
+        console.log(data);
+
+        // res.render('weather.hbs', data);
 
         res.render('weather.hbs', {
-            ip: '8.8.8.8',
-            city: 'suzhou',
-            lat: 32,
-            lng: 34,
-            summary: result.currently.summary + '\n' + result.hourly.summary + '\n' + result.daily.summary
+            ip: data.ip,
+            city: data.city,
+            lat: data.lat,
+            lng: data.lng,
+            summarycurrent: data.summarycurrent,
+            summaryhourly: data.summaryhourly,
+            summarydaily: data.summarydaily
         })
     })
 });
