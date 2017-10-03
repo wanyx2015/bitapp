@@ -4,8 +4,11 @@ const hbs = require('hbs');
 const weather = require('./weather/weather');
 const coin = require('./coin/coin');
 
-var app = express();
+// process stores all the system environment
+// If PORT does not exist, use 3000 instead
+const port = process.env.PORT || 3000;
 
+var app = express();
 
 // add partial support for hbs
 hbs.registerPartials(__dirname + '/views/partials');
@@ -104,6 +107,6 @@ app.get('/bad', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log("Server started on port 3000.")
+app.listen(port, () => {
+    console.log(`Server started on port ${port}`);
 })
