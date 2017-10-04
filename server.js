@@ -42,7 +42,7 @@ app.use((req, res, next) => {
 
 app.get('/', (req, res) => {
 
-    weather.getWeather((data) => {
+    weather.getWeather(req.ip, (data) => {
         // console.log(data);
         res.render('weather.hbs', data);
     });
@@ -101,6 +101,14 @@ app.get('/weather', (req, res) => {
     })
 });
 
+app.get('/header', (req, res) => {
+
+    var headers = JSON.stringify(req.headers, undefined, 4);
+    // console.log(req);
+    // console.log(JSON.stringify(req, null, 2));
+    res.send(JSON.stringify(req.rawHeaders, null, 4));
+    // res.send(req.ips);
+})
 
 
 app.get('/bad', (req, res) => {

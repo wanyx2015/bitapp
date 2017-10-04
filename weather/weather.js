@@ -4,9 +4,11 @@ const ax = require('axios');
 module.exports.getWeather = getWeather;
 
 var data = {};
+var clientIp;
 
-function getWeather(callback) {
+function getWeather(ip, callback) {
 
+    this.clientIp = ip;
     ax.get('https://api.ipify.org?format=json')
         .then(function (response) {
             console.log(response.data.ip)
@@ -15,7 +17,7 @@ function getWeather(callback) {
         })
         .then((res) => {
             // console.log(res);
-            ax.get(`https://freegeoip.net/json/${res}`)
+            ax.get(`https://freegeoip.net/json/${this.clientIp}`)
                 .then((res) => {
                     console.log(res.data.city);
                     data.city = res.data.city;
@@ -32,9 +34,9 @@ function getWeather(callback) {
                             // console.log(res.data.hourly.summary);
                             // console.log(res.data.daily.summary);
 
-                            data.summarycurrent=res.data.currently.summary;
-                            data.summaryhourly=res.data.hourly.summary;
-                            data.summarydaily=res.data.daily.summary;
+                            data.summarycurrent = res.data.currently.summary;
+                            data.summaryhourly = res.data.hourly.summary;
+                            data.summarydaily = res.data.daily.summary;
                             callback(data)
                             // return (res);
                         })
