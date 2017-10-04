@@ -16,7 +16,8 @@ function getWeather(ip, callback) {
             return response.data.ip;
         })
         .then((res) => {
-            // console.log(res);
+            console.log(this.clientIp);
+            data.ip = this.clientIp;
             ax.get(`https://freegeoip.net/json/${this.clientIp}`)
                 .then((res) => {
                     console.log(res.data.city);

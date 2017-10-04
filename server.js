@@ -84,7 +84,7 @@ app.get('/bit', (req, res) => {
 })
 
 app.get('/weather', (req, res) => {
-    weather.getWeather((data) => {
+    weather.getWeather(req.ip, (data) => {
         console.log(data);
 
         // res.render('weather.hbs', data);
