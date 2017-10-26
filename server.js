@@ -96,10 +96,12 @@ app.get('/', (req, res) => {
 
     var ip = req.ip.split(':')[req.ip.split(':').length - 1]
 
-    ip = req.headers['x-forwarded-for'].split(',').pop() ||
+    ip = req.headers['x-forwarded-for'] === null ? null : req.headers['x-forwarded-for'].split(',').pop() ||
         req.connection.remoteAddress ||
         req.socket.remoteAddress ||
-        req.connection.socket.remoteAddress
+        req.connection.socket.remoteAddress ||
+        req.ip.split(':')[req.ip.split(':').length - 1];
+
 
     weather.getWeather(ip, (data) => {
         console.log(data);
