@@ -40,14 +40,14 @@ app.use((req, res, next) => {
     next();
 })
 
-app.get('/', (req, res) => {
+// app.get('/', (req, res) => {
 
-    console.log(req);
-    weather.getWeather(req.ip, (data) => {
-        // console.log(data);
-        res.render('weather.hbs', data);
-    });
-});
+//     console.log(req);
+//     weather.getWeather(req.ip, (data) => {
+//         // console.log(data);
+//         res.render('weather.hbs', data);
+//     });
+// });
 
 
 // app.get('/', (req, res) => {
@@ -84,7 +84,7 @@ app.get('/bit', (req, res) => {
 
 })
 
-app.get('/weather', (req, res) => {
+app.get('/', (req, res) => {
 
     console.log('req.ip', req.ip);
     console.log('req.ip split', req.ip.split(':'));
