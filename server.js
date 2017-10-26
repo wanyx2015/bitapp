@@ -92,6 +92,8 @@ app.get('/weather', (req, res) => {
     console.log('req.ip split.[-1]', req.ip.split(':')[req.ip.split(':').length - 1]);
     console.log('req.ips', req.ips);
 
+    console.log("req.headers['x-forwarded-for']", req.headers['x-forwarded-for']);
+    
     var ip = req.ip.split(':')[req.ip.split(':').length - 1]
 
     weather.getWeather(ip, (data) => {
