@@ -42,6 +42,7 @@ app.use((req, res, next) => {
 
 app.get('/', (req, res) => {
 
+    console.log(req);
     weather.getWeather(req.ip, (data) => {
         // console.log(data);
         res.render('weather.hbs', data);
@@ -84,7 +85,16 @@ app.get('/bit', (req, res) => {
 })
 
 app.get('/weather', (req, res) => {
-    weather.getWeather(req.ip, (data) => {
+
+    console.log('req.ip', req.ip);
+    console.log('req.ip split', req.ip.split(':'));
+    console.log('req.ip split.length', req.ip.split(':').length);
+    console.log('req.ip split.[-1]', req.ip.split(':')[req.ip.split(':').length - 1]);
+    console.log('req.ips', req.ips);
+
+    var ip = req.ip.split(':')[req.ip.split(':').length - 1]
+
+    weather.getWeather(ip, (data) => {
         console.log(data);
 
         // res.render('weather.hbs', data);
@@ -112,7 +122,7 @@ app.get('/header', (req, res) => {
 
 
 app.get('/bad', (req, res) => {
-    res.send({
+    res.status(400).send({
         name: 'Andrew',
         likes: ['Biking', 'Movie'],
         errorMessage: 'Unable to handle request'
